@@ -29,7 +29,6 @@ define([
     // the render call internally after it loads data. Further more we load it
     // outside of an on-route function to have it loaded no matter which page is
     // loaded initially.
-    //var footerView = new FooterView();
 
     Backbone.history.start();
   };

@@ -6,8 +6,7 @@ define([
   'router', // Request router.js
   'bootstrap',
   'offcanvas',
-  'holder',
-], function($, _, Backbone, Router, Bootstrap,Offcanvas, Holder){
+], function($, _, Backbone, Router, Bootstrap,Offcanvas){
 	jQuery.noConflict();
   var initialize = function(){
     // Pass in our Router module and call it's initialize function
