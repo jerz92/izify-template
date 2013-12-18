@@ -5,7 +5,6 @@ require.config({
     underscore: 'libs/underscore/underscore',
     backbone: 'libs/backbone/backbone',
 	bootstrap: 'libs/bootstrap',
-	offcanvas: 'offcanvas',
     templates: '../templates'
 	
   },
@@ -18,10 +17,6 @@ require.config({
             exports: '$'
         },
 		'bootstrap': {
-            deps: ['jquery'],
-            exports: '$'
-        },
-		'offcanvas': {
             deps: ['jquery'],
             exports: '$'
         },
