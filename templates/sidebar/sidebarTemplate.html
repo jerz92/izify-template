@@ -1,5 +1,7 @@
 <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
           <div class="list-group">
-            <a href="#" class="list-group-item">Link</a>
+          <% _.each(categories, function(category) { %>
+            <a href="#category/index/<%= category.get('categoryId') %>" class="list-group-item"><%= category.get('name') %></a>
+          <% }); %>
           </div>
         </div><!--/span-->
