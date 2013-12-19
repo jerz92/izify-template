@@ -4,12 +4,16 @@ define([
   'underscore',
   'backbone',
   'views/home/HomeView',
-], function($, _, Backbone, HomeView) {
+  'views/content/AboutView',
+  'views/content/ContactView',
+], function($, _, Backbone, HomeView, AboutView, ContactView) {
   
   var AppRouter = Backbone.Router.extend({
     routes: {
       // Define some URL routes
       // Default
+	  'about':'showAbout',
+	  'contact':'showContact',
       '*actions': 'defaultAction'
     }
 	
@@ -19,6 +23,18 @@ define([
 
     var app_router = new AppRouter;
     
+	app_router.on('route:showAbout', function (actions) {
+     	
+        var aboutView = new AboutView();
+        aboutView.render();
+    });
+	
+	app_router.on('route:showContact', function (actions) {
+     	
+        var contactView = new ContactView();
+        contactView.render();
+    });
+	
     app_router.on('route:defaultAction', function (actions) {
      	
        // We have no matching route, lets display the home page 
