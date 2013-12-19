@@ -4,13 +4,6 @@ define(['jquery', 'underscore', 'backbone','views/sidebar/SidebarView', 'text!te
         initialize: function() {
             this.$el.off();
         },
-        events: {
-            'click [data-toggle=offcanvas]': 'toggleClass'
-        },
-        toggleClass: function(e) {
-			console.log("fire");
-            this.$('.row-offcanvas').toggleClass('active');
-        },
         render: function() {
             this.$el.html(homeTemplate);
 			
