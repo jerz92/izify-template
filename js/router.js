@@ -12,6 +12,7 @@ define([
       // Default
       '*actions': 'defaultAction'
     }
+	
   });
   
   var initialize = function(){
@@ -19,7 +20,7 @@ define([
     var app_router = new AppRouter;
     
     app_router.on('route:defaultAction', function (actions) {
-     
+     	
        // We have no matching route, lets display the home page 
         var homeView = new HomeView();
         homeView.render();
@@ -30,6 +31,7 @@ define([
     // outside of an on-route function to have it loaded no matter which page is
     // loaded initially.
 
+	
     Backbone.history.start();
   };
   return { 
