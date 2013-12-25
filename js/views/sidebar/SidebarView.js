@@ -4,13 +4,6 @@ define(['jquery', 'underscore', 'backbone','models/global/GlobalModel','collecti
         initialize: function() {
             this.$el.off();
         },
-        events: {
-            'click [data-toggle=offcanvas]': 'toggleClass'
-        },
-        toggleClass: function(e) {
-			console.log("fire");
-            this.$('.row-offcanvas').toggleClass('active');
-        },
         render: function() {
 			var that = this;
 			var global = new GlobalModel();
@@ -26,7 +19,7 @@ define(['jquery', 'underscore', 'backbone','models/global/GlobalModel','collecti
                     });
 					$("#sidebar").append(template);
                 },
-                error: function(model, response) {
+                error: function(collection, response) {
                     console.log(that.model);
                 }
 			});            

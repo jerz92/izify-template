@@ -7,6 +7,7 @@ define([
   var CategoryCollection = Backbone.Collection.extend({
     model: CategoryModel,
     url:"https://izify.com/api/izify-api/user/get_all_categories.php",
+	//url:"http://localhost:8888/izify-api/user/get_all_categories.php",
 	parse: function(data) {
       	return data.tbl_categories;
     },
