@@ -20,7 +20,7 @@ define(['jquery', 'underscore', 'backbone','models/global/GlobalModel','collecti
 					$("#sidebar").append(template);
                 },
                 error: function(collection, response) {
-                    console.log(that.model);
+                    console.log("error");
                 }
 			});            
         }

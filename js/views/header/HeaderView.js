@@ -2,7 +2,6 @@ define(['jquery', 'underscore', 'backbone','models/global/GlobalModel','collecti
     var HeaderView = Backbone.View.extend({
         el: $("#header"),
         initialize: function() {
-			this.render();
             this.$el.off();
 			
         },

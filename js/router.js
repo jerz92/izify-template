@@ -6,10 +6,9 @@ define([
   'views/home/HomeView',
   'views/content/AboutView',
   'views/content/ContactView',
-  'views/global/GlobalView',
   'views/header/HeaderView',
   'views/footer/FooterView',
-], function($, _, Backbone, HomeView, AboutView, ContactView,GlobalView,HeaderView,FooterView) {
+], function($, _, Backbone, HomeView, AboutView, ContactViews,HeaderView,FooterView) {
   
   var AppRouter = Backbone.Router.extend({
     routes: {
@@ -49,11 +48,10 @@ define([
     // the render call internally after it loads data. Further more we load it
     // outside of an on-route function to have it loaded no matter which page is
     // loaded initially.
-	var globalView = new GlobalView();
 	var headerView = new HeaderView();
+	headerView.render();
 	var footerView = new FooterView();
-	//headerView.render();
-	//footerView.render();
+	footerView.render();
 	
     Backbone.history.start();
   };

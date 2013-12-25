@@ -2,7 +2,6 @@ define(['jquery', 'underscore', 'backbone','models/global/GlobalModel','collecti
     var FooterView = Backbone.View.extend({
         el: $("#footer"),
         initialize: function() {
-			this.render();
             this.$el.off();
 			
         },
