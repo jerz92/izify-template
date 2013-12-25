@@ -1,0 +1,9 @@
+<footer>
+        <div class="row">
+          <div class="col-lg-12">
+            <p>Copyright &copy; <% _.each(merchants, function(merchant) { %>
+<%= merchant.get('shopName') %>
+<% }); %> 2013 - Powered by <a href="https://izify.com">Izify</a></p>
+          </div>
+        </div>
+      </footer>
