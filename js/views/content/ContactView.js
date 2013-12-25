@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'backbone','views/sidebar/SidebarView', 'text!templates/content/contactTemplate.html'], function($, _, Backbone,SidebarView, contactTemplate) {
+define(['jquery', 'underscore', 'backbone','text!templates/content/contactTemplate.html'], function($, _, Backbone, contactTemplate) {
     var ContactView = Backbone.View.extend({
         el: $("#page"),
         initialize: function() {
@@ -7,8 +7,6 @@ define(['jquery', 'underscore', 'backbone','views/sidebar/SidebarView', 'text!te
         render: function() {
             this.$el.html(contactTemplate);
 			
-			var sidebarView = new SidebarView();
-      		sidebarView.render();
         },
     });
     return ContactView;

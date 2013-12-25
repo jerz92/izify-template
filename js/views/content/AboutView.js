@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'backbone','views/sidebar/SidebarView', 'text!templates/content/aboutTemplate.html'], function($, _, Backbone,SidebarView, aboutTemplate) {
+define(['jquery', 'underscore', 'backbone', 'text!templates/content/aboutTemplate.html'], function($, _, Backbone, aboutTemplate) {
     var AboutView = Backbone.View.extend({
         el: $("#page"),
         initialize: function() {
@@ -6,9 +6,6 @@ define(['jquery', 'underscore', 'backbone','views/sidebar/SidebarView', 'text!te
         },
         render: function() {
             this.$el.html(aboutTemplate);
-			
-			var sidebarView = new SidebarView();
-      		sidebarView.render();
         },
     });
     return AboutView;
