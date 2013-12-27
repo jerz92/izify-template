@@ -1,0 +1,27 @@
+<div id="sidebar"></div>
+<% _.each(products, function(product) { %>
+<div class="col-md-9">
+	
+          <div class="thumbnail">
+            <img class="img-responsive" src="http://placehold.it/800x300" alt="">
+            <div class="caption-full">
+              <h4 class="pull-right"><%= product.get('name') %></h4>
+              <h4><a href="#">RM<%= product.get('price') %></a></h4>
+              <p><%= product.get('description') %></p>
+            </div>
+           
+          </div>
+
+          
+
+       
+        
+        <div class="well">
+
+            <div class="text-right">
+              <a class="btn btn-success" href="#order/index/<%= product.get('productId') %>">Buy</a>
+            </div>
+            
+        </div>
+         </div>
+        <% }); %>
