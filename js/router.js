@@ -4,16 +4,22 @@ define([
   'underscore',
   'backbone',
   'views/home/HomeView',
+  'views/category/CategoryView',
+  'views/product/ProductView',
+  'views/order/OrderView',
   'views/content/AboutView',
   'views/content/ContactView',
   'views/header/HeaderView',
   'views/footer/FooterView',
-], function($, _, Backbone, HomeView, AboutView, ContactViews,HeaderView,FooterView) {
+], function($, _, Backbone, HomeView,CategoryView,ProductView,OrderView, AboutView, ContactView,HeaderView,FooterView) {
   
   var AppRouter = Backbone.Router.extend({
     routes: {
       // Define some URL routes
       // Default
+	  'category/index/:categoryId':'showCategory',
+	  'product/detail/:productId':'showProduct',
+	  'order/index/:productId':'showOrder',
 	  'about':'showAbout',
 	  'contact':'showContact',
       '*actions': 'defaultAction'
@@ -25,6 +31,24 @@ define([
 
     var app_router = new AppRouter;
     
+	app_router.on('route:showCategory', function (categoryId) {
+     	
+        var categoryView = new CategoryView();
+        categoryView.render(categoryId);
+    });
+	
+	app_router.on('route:showProduct', function (productId) {
+     	
+        var productView = new ProductView();
+        productView.render(productId);
+    });
+	
+	app_router.on('route:showOrder', function (productId) {
+     	
+        var orderView = new OrderView();
+        orderView.render(productId);
+    });
+	
 	app_router.on('route:showAbout', function (actions) {
      	
         var aboutView = new AboutView();
@@ -48,10 +72,6 @@ define([
     // the render call internally after it loads data. Further more we load it
     // outside of an on-route function to have it loaded no matter which page is
     // loaded initially.
-	var headerView = new HeaderView();
-	headerView.render();
-	var footerView = new FooterView();
-	footerView.render();
 	
     Backbone.history.start();
   };
