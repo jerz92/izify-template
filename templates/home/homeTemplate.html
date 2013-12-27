@@ -40,18 +40,18 @@
                 <img src="http://placehold.it/320x150" alt="">
                 <div class="caption">
                   <h4 class="pull-right">RM<%= product.get('price') %></h4>
-                  <h4><a href="#"><%= product.get('name') %></a></h4>
+                  <h4><a href="#product/detail/<%= product.get('productId') %>"><%= product.get('name') %></a></h4>
                   <p><%= product.get('description') %></p>
                 </div>
                 <div class="ratings">
-                  <p class="pull-right">15 reviews</p>
+                 <!-- <p class="pull-right">15 reviews</p>
                   <p>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>
-                  </p>
+                  </p>-->
                 </div>
               </div>
             </div>
