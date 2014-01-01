@@ -10,6 +10,7 @@ define(['jquery', 'underscore', 'backbone','models/global/GlobalModel','collecti
 			this.collection = new CategoryCollection();
 			var formValues = {
                 merchantId: global.merchantId
+				
             };
 			this.collection.fetch({
                 data: formValues,

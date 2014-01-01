@@ -1,0 +1,100 @@
+<div id="sidebar">
+
+</div>
+
+<% _.each(orders, function(order) { %>
+
+<div class="col-md-9">
+    <h4>Your order consists of the following items:</h4>
+
+    <table  class="table">
+        <tr>
+            <td>Product Name</td>
+
+            <td>Price</td>
+
+            <td>Quantity</td>
+
+            <td>Subtotal</td>
+        </tr>
+
+        <tr>
+            <td><%= order.get('name') %></td>
+
+            <td>RM<%= order.get('price') %></td>
+
+            <td>&nbsp;</td>
+
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+    
+    <p>Total amount:</p>
+
+	<h4>Please enter your details:</h4>
+    
+    <div data-role="fieldcontain">
+    	<label for="email">Email Address:</label> 
+        <input id="email" type="text" class="form-control">
+    </div>
+    
+    <div data-role="fieldcontain">
+    	<label for="name">Name:</label> 
+        <input id="name" type="text" class="form-control">
+    </div>
+    
+    <div data-role="fieldcontain">
+    	<label for="password">Password (To check tracking number):</label> 
+        <input id="password" type="text" class="form-control">
+    </div>
+    
+    <div data-role="fieldcontain">
+    	<label for="mobilePhone">Mobile Phone:</label> 
+        <input id="mobilePhone" type="text" class="form-control">
+    </div>
+    
+    <hr />
+    
+    <h4>Please enter your address details:</h4>
+    
+    <div data-role="fieldcontain">
+    	<label for="address">Address:</label> 
+        <textarea id="address" name="address" cols="" rows="" class="form-control"></textarea>
+    </div>
+    
+    <div data-role="fieldcontain">
+    	<label for="city">Town/City:</label> 
+        <input id="city" type="text" class="form-control">
+    </div>
+    
+    <div data-role="fieldcontain">
+    	<label for="state">Region/State:</label> 
+        <input id="state" type="text" class="form-control">
+    </div>
+    
+    <div data-role="fieldcontain">
+    	<label for="postalCode">Postal Code/Zip:</label> 
+        <input id="postalCode" type="text" class="form-control">
+    </div>
+    
+    <hr />
+    
+    <div class="well">
+        <div class="text-right">
+        <input id="quantity" type="hidden" value="<%= localStorage.quantity %>">
+        <input id="productId" type="hidden" value="<%= order.get('productId') %>">
+            <a class="btn btn-success" id="orderButton" >Place order</a>
+        </div>
+    </div>
+    
+    	<div>
+        	<h4>Refund Policy</h4>
+            <p><%= order.get('refundPolicy') %></p>
+            <h4>Privacy Policy</h4>
+            <p><%= order.get('privacyPolicy') %></p>
+            <h4>Term Of Service</h4>
+            <p><%= order.get('termOfService') %></p>
+        </div>
+    
+    
+</div><% }); %>

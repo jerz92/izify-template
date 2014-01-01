@@ -1,17 +1,15 @@
 define([
   'underscore',
   'backbone',
-  'models/category/CategoryModel',
-  'models/merchant/MerchantModel',
-  'models/product/ProductModel'
-], function(_, Backbone, CategoryModel, MerchantModel, ProductModel){
+  'models/order/OrderModel',
+], function(_, Backbone, OrderModel){
 
  //stuck here
   var OrderCollection = Backbone.Collection.extend({
-    model: CategoryModel,
-    url:"https://izify.com/api/izify-api/user/get_all_categories.php",
+    model: OrderModel,
+    url:"https://izify.com/api/izify-api/user/get_order_details.php",
 	parse: function(data) {
-      	return data.tbl_categories;
+      	return data.tbl_orders;
     },
       
   });
