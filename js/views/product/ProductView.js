@@ -4,8 +4,23 @@ define(['jquery', 'underscore', 'backbone', 'models/global/GlobalModel', 'collec
         initialize: function() {
             this.$el.off();
         },
+		events: {
+            "click #buyButton": "buy"
+        },
+		buy: function(event) {
+			event.preventDefault();
+			var quantity = $("#quantity").val();
+			var productId = $("#productId").val();
+			if(quantity == "")
+			{
+				alert("Please enter quantity.");
+			}else {
+				localStorage.quantity = quantity;
+				window.location.replace('#order/index/'+productId);
+			}
+			
+		},
         render: function(productId) {
-            
 			var that = this;
 			var global = new GlobalModel();
             this.collection = new ProductDetailCollection();

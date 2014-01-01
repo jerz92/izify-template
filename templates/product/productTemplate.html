@@ -12,14 +12,15 @@
            
           </div>
 
-          
-
-       
-        
         <div class="well">
-
+			<div data-role="fieldcontain">
+    			<label for="quantity">Quantity:</label> 
+        		<input id="quantity" name="quantity" type="text" class="form-control">
+                <input id="productId" name="productId" type="hidden" value="<%= product.get('productId') %>" />
+    		</div>
+            <hr />
             <div class="text-right">
-              <a class="btn btn-success" href="#order/index/<%= product.get('productId') %>">Buy</a>
+              <a class="btn btn-success" id="buyButton">Buy</a>
             </div>
             
         </div>
